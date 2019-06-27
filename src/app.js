@@ -5,7 +5,7 @@ const geocode=require('./utils/geocode');
 const forecast=require('./utils/forecast');
 
 const app=express();
-
+const PORT= process.env.PORT ||5000;
 //Define paths for express config
 const publicDirectorypath=path.join(__dirname,'../public');
 const viewsPath=path.join(__dirname,'../templates/views');
@@ -91,6 +91,6 @@ app.get('/*',(req,res)=>{
     });
 })
 
-app.listen(5000,()=>{
-    console.log("node is running at port 5000");
+app.listen(PORT,()=>{
+    console.log("node is running at port"+PORT);
 });
